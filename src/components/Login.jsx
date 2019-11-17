@@ -17,7 +17,6 @@ const Login = () => {
 
   const onSubmit = e => {
     if (name === "admin" && pw === "1234") {
-      // return <Redirect to="/login/success" />;
       history.push("/login/success");
     }
   };
@@ -30,6 +29,7 @@ const Login = () => {
           type="text"
           placeholder="name"
           value={name}
+          id="loginInput"
           onChange={onChangeName}
         />
         <input
@@ -37,9 +37,10 @@ const Login = () => {
           type="password"
           placeholder="password"
           value={pw}
+          id="pwInput"
           onChange={onChangePW}
         />
-        <button className={styles.submit} onClick={onSubmit}>
+        <button id="loginBtn" className={styles.submit} onClick={onSubmit}>
           sign in
         </button>
       </form>
